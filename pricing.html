@@ -12,12 +12,15 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-<link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon.png">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Fonts load without blocking the first paint -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400..800&family=IBM+Plex+Mono&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400..800&family=IBM+Plex+Mono&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400..800&family=IBM+Plex+Mono&display=swap"></noscript>
+<link rel="preload" as="image" href="assets/img/logo-mark.webp" type="image/webp">
 <link rel="stylesheet" href="assets/css/style.css">
 <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -26,8 +29,8 @@
 <header class="site-header" id="top">
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="Viresta home">
-      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 8.5L19.5 32" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" fill="none"/><path d="M19.5 32L27 16.5" stroke="#e8641b" stroke-width="5.5" stroke-linecap="round" fill="none"/><circle cx="31" cy="8.5" r="4.2" fill="#e8641b"/></svg>
-      <span>VIRESTA</span>
+      <img class="brand-v" src="assets/img/logo-mark.webp" alt="" width="58" height="36" fetchpriority="high" decoding="async">
+      <img class="brand-word" src="assets/img/logo-word.webp" alt="Viresta" width="105" height="17" decoding="async">
     </a>
     <nav aria-label="Main">
       <ul class="nav-links" style="list-style:none;margin:0;padding:0">
@@ -277,8 +280,8 @@
     <div class="foot-grid">
       <div>
         <a class="brand" href="index.html" aria-label="Viresta home">
-          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 8.5L19.5 32" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" fill="none"/><path d="M19.5 32L27 16.5" stroke="#e8641b" stroke-width="5.5" stroke-linecap="round" fill="none"/><circle cx="31" cy="8.5" r="4.2" fill="#e8641b"/></svg>
-          <span>VIRESTA</span>
+          <img class="brand-v" src="assets/img/logo-mark.webp" alt="" width="58" height="36" loading="lazy" decoding="async">
+      <img class="brand-word" src="assets/img/logo-word.webp" alt="Viresta" width="105" height="17" loading="lazy" decoding="async">
         </a>
         <p class="foot-tag">AI automation and content for coaches, experts and creators. One team, from the first enquiry to the booked call.</p>
       </div>

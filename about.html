@@ -12,12 +12,15 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-<link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon.png">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Fonts load without blocking the first paint -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400..800&family=IBM+Plex+Mono&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400..800&family=IBM+Plex+Mono&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400..800&family=IBM+Plex+Mono&display=swap"></noscript>
+<link rel="preload" as="image" href="assets/img/logo-mark.webp" type="image/webp">
 <link rel="stylesheet" href="assets/css/style.css">
 <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -26,8 +29,8 @@
 <header class="site-header" id="top">
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="Viresta home">
-      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 8.5L19.5 32" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" fill="none"/><path d="M19.5 32L27 16.5" stroke="#e8641b" stroke-width="5.5" stroke-linecap="round" fill="none"/><circle cx="31" cy="8.5" r="4.2" fill="#e8641b"/></svg>
-      <span>VIRESTA</span>
+      <img class="brand-v" src="assets/img/logo-mark.webp" alt="" width="58" height="36" fetchpriority="high" decoding="async">
+      <img class="brand-word" src="assets/img/logo-word.webp" alt="Viresta" width="105" height="17" decoding="async">
     </a>
     <nav aria-label="Main">
       <ul class="nav-links" style="list-style:none;margin:0;padding:0">
@@ -58,18 +61,19 @@
       <h1 class="reveal">The studio behind your <em class="accent">systems and content.</em></h1>
       <p class="lead reveal d1">Viresta is a small team that builds the automation and the content behind a coaching business, so one partner owns the path from a viewer to a booked call.</p>
     </div>
-    <svg class="deco" viewBox="0 0 300 300" aria-hidden="true">
-      <circle cx="150" cy="150" r="120" fill="#fbe7d6"/>
-      <g class="il-spin" style="animation-duration:36s">
-        <circle cx="150" cy="150" r="100" fill="none" stroke="#e8641b" stroke-width="1.5" stroke-dasharray="3 9"/>
-        <circle cx="250" cy="150" r="10" fill="#e8641b"/><circle cx="50" cy="150" r="7" fill="#1e1813"/><circle cx="150" cy="50" r="6" fill="#c24e0e"/>
-      </g>
-      <path d="M112 120 L150 196 L188 120" fill="none" stroke="#1e1813" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M150 196 L188 120" fill="none" stroke="#e8641b" stroke-width="14" stroke-linecap="round"/>
-    </svg>
+    <div class="deco deco--logo" aria-hidden="true">
+      <svg viewBox="0 0 300 300">
+        <circle cx="150" cy="150" r="120" fill="#ece0cd"/>
+        <g class="il-spin" style="animation-duration:36s">
+          <circle cx="150" cy="150" r="138" fill="none" stroke="#e8641b" stroke-width="1.5" stroke-dasharray="3 9"/>
+          <circle cx="288" cy="150" r="9" fill="#e8641b"/><circle cx="12" cy="150" r="6" fill="#1e1813"/>
+        </g>
+      </svg>
+      <img src="assets/img/logo-mark.webp" alt="" width="232" height="144" loading="lazy" decoding="async">
+    </div>
   </section>
 
-  <section class="section section--alt">
+  <section class="section">
     <div class="wrap split">
       <div>
         <span class="eyebrow reveal">The brand</span>
@@ -84,7 +88,7 @@
     </div>
   </section>
 
-  <section class="section section--dark">
+  <section class="section section--sand">
     <div class="wrap">
       <span class="eyebrow reveal">Our mission</span>
       <p class="mission reveal d1" style="margin-top:22px">To make your expertise <em>easy to find</em>, <em>easy to trust</em> and <em>easy to book</em>, with systems and content built by one team, working from one plan.</p>
@@ -124,18 +128,35 @@
   </section>
 
   <section class="section">
-    <div class="wrap founder">
-      <div class="monogram reveal" aria-hidden="true">
-        <svg viewBox="0 0 320 320"><g class="il-spin" style="animation-duration:50s"><circle cx="160" cy="160" r="130" fill="none" stroke="#e8641b" stroke-width="1.2" stroke-dasharray="2 10"/><circle cx="290" cy="160" r="8" fill="#e8641b"/></g></svg>
-        <span>AA</span>
-      </div>
-      <div>
+    <div class="wrap">
+      <div class="head">
         <span class="eyebrow reveal">Meet the founder</span>
-        <h2 class="reveal d1" style="margin:16px 0 8px">Abdul Ahad</h2>
-        <p class="muted reveal d1" style="margin-bottom:18px">Founder and owner, Viresta</p>
-        <p class="lead reveal d2">Abdul Ahad founded Viresta to give coaches, experts and creators one partner for the systems that turn attention into booked calls, and the content that builds their authority.</p>
-        <div class="btn-row reveal d3" style="margin-top:28px">
-          <a class="btn btn--primary" href="contact.html">Book a strategy call</a>
+        <h2 class="reveal d1">The person behind <em class="accent">Viresta.</em></h2>
+      </div>
+      <div class="founder reveal">
+        <div class="founder-visual">
+          <!-- To show a photo, add <img src="assets/img/founder.jpg" alt="Abdul Ahad"> inside .monogram (it fills the frame). -->
+          <div class="monogram">
+            <svg viewBox="0 0 320 400" aria-hidden="true"><g class="il-spin" style="animation-duration:50s;transform-origin:160px 200px"><circle cx="160" cy="200" r="130" fill="none" stroke="#e8641b" stroke-width="1.2" stroke-dasharray="2 10"/><circle cx="290" cy="200" r="8" fill="#e8641b"/></g></svg>
+            <span aria-hidden="true">AA</span>
+          </div>
+          <img class="founder-badge" src="assets/img/logo.webp" alt="" width="92" height="92" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <h3 style="font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,4vw,3.2rem);line-height:1">Abdul Ahad</h3>
+          <span class="founder-role">Founder and owner, Viresta</span>
+          <p class="founder-statement">One partner for the systems that turn attention into booked calls, and the content that <em>builds authority.</em></p>
+          <p class="lead">Abdul Ahad founded Viresta to give coaches, experts and creators one team for both sides of growth: AI automation that follows up with every lead, and content that brings those leads in.</p>
+          <ul class="founder-facts">
+            <li><span>Role</span>Founder and owner</li>
+            <li><span>Built</span>This website, design and code</li>
+            <li><span>Email</span><a href="mailto:hello@viresta.com">hello@viresta.com</a></li>
+          </ul>
+          <div class="btn-row" style="margin-top:28px">
+            <a class="btn btn--primary" href="contact.html">Book a call with Abdul
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn btn--ghost" href="mailto:hello@viresta.com">Send an email</a>
+          </div>
         </div>
       </div>
     </div>
@@ -146,8 +167,8 @@
     <div class="foot-grid">
       <div>
         <a class="brand" href="index.html" aria-label="Viresta home">
-          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 8.5L19.5 32" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" fill="none"/><path d="M19.5 32L27 16.5" stroke="#e8641b" stroke-width="5.5" stroke-linecap="round" fill="none"/><circle cx="31" cy="8.5" r="4.2" fill="#e8641b"/></svg>
-          <span>VIRESTA</span>
+          <img class="brand-v" src="assets/img/logo-mark.webp" alt="" width="58" height="36" loading="lazy" decoding="async">
+      <img class="brand-word" src="assets/img/logo-word.webp" alt="Viresta" width="105" height="17" loading="lazy" decoding="async">
         </a>
         <p class="foot-tag">AI automation and content for coaches, experts and creators. One team, from the first enquiry to the booked call.</p>
       </div>
