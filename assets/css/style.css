@@ -120,12 +120,17 @@ em.accent, .accent { font-style: italic; color: var(--orange-ink); }
 
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(247, 240, 229, .86);
-  -webkit-backdrop-filter: saturate(1.4) blur(10px); backdrop-filter: saturate(1.4) blur(10px);
+  background: transparent;
   border-bottom: 1px solid transparent;
-  transition: border-color .25s;
+  transition: background-color .3s, border-color .3s;
 }
-.site-header.is-scrolled { border-bottom-color: var(--line); }
+/* Once the page scrolls, a light see-through glass keeps the links readable */
+.site-header.is-scrolled {
+  background: rgba(247, 240, 229, .55);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px);
+  border-bottom-color: rgba(226, 212, 192, .7);
+}
+.nav-open .site-header { background: var(--cream); }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 24px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.12rem; letter-spacing: .2em; color: var(--ink); }
 .brand-mark { width: 34px; height: 34px; flex: none; transition: transform .4s var(--ease); }
