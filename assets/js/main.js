@@ -93,24 +93,6 @@
     window.addEventListener("resize", function () { if (window.innerWidth >= 900) setOpen(false); });
   });
 
-  /* ---------- Light / dark theme ---------- */
-  safe(function () {
-    var btn = $(".theme-toggle"); if (!btn) return;
-    var root = document.documentElement;
-    function label() {
-      var dark = root.getAttribute("data-theme") === "dark";
-      btn.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
-      btn.setAttribute("aria-pressed", String(dark));
-    }
-    label();
-    btn.addEventListener("click", function () {
-      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
-      try { localStorage.setItem("viresta-theme", next); } catch (e) { /* storage blocked: theme still applies for this page */ }
-      label();
-    });
-  });
-
   /* ---------- Reveal on scroll, steps, and pausing off-screen animations ---------- */
   safe(function () {
     var reveals = $$(".reveal"), steps = $$("[data-steps]");

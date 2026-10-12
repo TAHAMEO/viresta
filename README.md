@@ -23,9 +23,8 @@ python3 -m http.server 8000
 
 ## Editing
 
-- **Colours and fonts:** the tokens at the top of `assets/css/style.css` (`:root`). The black theme overrides them under `[data-theme="dark"]` in the same file.
-- **Theme:** visitors switch between the cream and black themes with the button in the header. The choice is saved in their browser. Until they choose, the site follows their device setting.
-- **Logo:** `assets/img/logo-mark.svg` (for light backgrounds), `logo-mark-light.svg` (for dark backgrounds), `favicon.svg`, `favicon.png`, `apple-touch-icon.png` and the social share image `og-image.png`. The header and footer use the same mark inline, so it takes the right colour in either theme.
+- **Colours and fonts:** the tokens at the top of `assets/css/style.css` (`:root`).
+- **Logo:** `assets/img/logo-mark.svg` (for light backgrounds), `logo-mark-light.svg` (for dark backgrounds), `favicon.svg`, `favicon.png`, `apple-touch-icon.png` and the social share image `og-image.png`. The header and footer use the same mark inline.
 - **Prices:** the builder and add-ons read from the data at the top of `assets/js/main.js`. The same prices also appear as text in `services.html` and `pricing.html`, so update them in all three places.
 - **Contact form:** there is no server. Submitting the form opens the visitor's email app with a message to `hello@viresta.com`. To collect submissions without email, point the form at a form service and remove the `mailto` step in `main.js`.
 - **Reviews and results:** the site doesn't include testimonials, client logos or result figures. Add them only after a client has supplied and approved them.
